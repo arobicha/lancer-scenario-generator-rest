@@ -69,9 +69,6 @@ function composeNPC() {
     for (let i = 0; i < npc_modules; i++) {
       switch (npc_template) {
         case "Ultra":
-          if (i === 0) {
-            // Note: Original code incremented npc_modules here, but we shouldn't modify it during iteration
-          }
           npc_module[i] = randomize(person_template_ultra);
           break;
         case "Veteran":
@@ -169,7 +166,7 @@ function scenarioGenerate() {
     }
   }
 
-  if (anthropocene == null) {
+  if (anthropocene === undefined) {
     anthropocene = anthropocentric_feature[Math.floor(Math.random() * anthropocentric_feature.length)];
   }
 

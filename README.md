@@ -1,6 +1,80 @@
-# Lancer RPG: Basic Mission/Scenario Generator
+# Lancer RPG: Basic Mission/Scenario Generator REST API
 
-This is a pretty simple randomizer that will generate some basic parameters for a mission in the [_Lancer_ tabletop RPG](https://twitter.com/Lancer_RPG) by Tom Parkinson Morgan and Miguel Lopez.
+This is a REST API that generates random scenarios for missions in the [_Lancer_ tabletop RPG](https://twitter.com/Lancer_RPG) by Tom Parkinson Morgan and Miguel Lopez.
+
+## REST API Usage
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running the Server
+
+```bash
+npm start
+```
+
+The server will start on port 3000 by default (or the PORT environment variable if set).
+
+### API Endpoints
+
+#### `GET /`
+Returns information about available endpoints.
+
+**Example:**
+```bash
+curl http://localhost:3000/
+```
+
+#### `GET /api/scenario`
+Generates and returns a random scenario as JSON.
+
+**Example:**
+```bash
+curl http://localhost:3000/api/scenario
+```
+
+**Response Format:**
+```json
+{
+  "world": {
+    "type": "A temperate world...",
+    "naturalFeature": "...",
+    "naturalFeatureHazard": null,
+    "anthropocentricFeature": "..."
+  },
+  "mission": {
+    "source": "...",
+    "hook": "...",
+    "location": "...",
+    "locationHazard": null,
+    "complication": "...",
+    "sitrep": "..."
+  },
+  "npcForces": [
+    {
+      "faction": "...",
+      "orientation": "...",
+      "signature": "...",
+      "force": "..."
+    }
+  ],
+  "notableNPCs": [
+    {
+      "name": "...",
+      "mechName": "...",
+      "mechClass": "...",
+      "template": "...",
+      "modules": [],
+      "tier": 1
+    }
+  ]
+}
+```
+
+## Static Web Version
 
 View randomized scenarios from the core book at http://brocktopus.github.io/lancer-scenario-generator/
 

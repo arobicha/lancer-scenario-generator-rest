@@ -1,4 +1,16 @@
 // Slightly tweaked from https://github.com/hbi99/namegen
+const { planet_name } = require('./list-world-names.js');
+
+// Pull a random element from the input list Array.
+function randomize(my_list, lcase) {
+  const randNumber = Math.floor(Math.random() * my_list.length);
+  let randElement = my_list[randNumber];
+  if (lcase === undefined) {
+    const myElement = randElement.charAt(0).toUpperCase() + randElement.slice(1);
+    randElement = myElement;
+  }
+  return randElement;
+}
 
 function world_name_gen(count) {
   var random = Math.random();
@@ -46,4 +58,6 @@ function world_name_gen(count) {
       return planet + " " + planet_number;
     }
   }
-};
+}
+
+module.exports = { world_name_gen };

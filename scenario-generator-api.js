@@ -161,7 +161,7 @@ function scenarioGenerate() {
   let anthropocene;
   if (world.includes("inhospitable")) {
     const rand_inhospitable = Math.floor(Math.random() * 2);
-    if (rand_inhospitable < 1) {
+    if (rand_inhospitable === 0) {
       anthropocene = "None.";
     }
   }

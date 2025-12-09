@@ -1,0 +1,16 @@
+{
+  "name": "lancer-scenario-generator-rest",
+  "version": "1.0.0",
+  "description": "This is a pretty simple randomizer that will generate some basic parameters for a mission in the [_Lancer_ tabletop RPG](https://twitter.com/Lancer_RPG) by Tom Parkinson Morgan and Miguel Lopez.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["lancer", "rpg", "scenario", "generator", "rest-api"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
